@@ -1,0 +1,15 @@
+/* 
+PLAN: 
+
+https://css-tricks.com/difference-between-types-of-css-variables/
+
+Lvl 1: 
+    - Existing CSS; convert multiple places where a property is used to variables (do several, including colors, sizes, etc.)
+    - Add new CSS variables and apply them
+Lvl 2:
+    - Reset a variable within a media query (example: https://codepen.io/chriscoyier/pen/ORdLvq?editors=0110)
+    - Dark mode/light mode toggle switch for the website!! (tie css variables to function called on button click)
+Lvl 3:
+    - Slider to make text size larger/smaller?
+    - Something using calc() or another css fn?
+*/
