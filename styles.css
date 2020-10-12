@@ -14,6 +14,27 @@ Lvl 3:
     - Something using calc() or another css fn?
 */
 
+/* Your tasks: 
+
+1. Convert the following values to CSS variables, and replace the value itself in the CSS with the variable name. Make your CSS variable names semantic so they make sense with what you're using them for!
+
+Keep them as their original value for now. For example, the background color of the whole page is set to antiquewhite, so when you replace that with a variable, make sure the variable has antiquewhite as a value for now. The appearance of the page shouldn't change at this point!
+
+    - body background color
+    - ".plant-listing" background color 
+    - body text color
+    - ".plant-header" font size 
+    - ".plant-description" font size
+
+2. 
+
+*/
+
+body {
+  background-color: antiquewhite;
+  color: black;
+}
+
 header {
   text-align: center;
 }
@@ -26,11 +47,19 @@ main {
 .plant-listing {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   padding: 25px;
   margin: 25px;
   border-radius: 10px;
-  width: 400px;
+  width: 25vw;
+  height: 40vh;
+  text-align: center;
+  background-color: rgb(197, 231, 147);
+}
+
+.plant-header {
+  font-size: 24px;
 }
 
 .plant-pic {
@@ -38,6 +67,15 @@ main {
   width: auto;
 }
 
+.plant-description {
+  font-size: 16px;
+}
+
 .plant-listing > button {
   padding: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 5vh;
 }
