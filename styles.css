@@ -13,3 +13,31 @@ Lvl 3:
     - Slider to make text size larger/smaller?
     - Something using calc() or another css fn?
 */
+
+header {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.plant-listing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  margin: 25px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.plant-pic {
+  height: 300px;
+  width: auto;
+}
+
+.plant-listing > button {
+  padding: 10px;
+}
