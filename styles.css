@@ -18,7 +18,9 @@ Lvl 3:
 
 1. Convert the following values to CSS variables, and replace the value itself in the CSS with the variable name. Make your CSS variable names semantic so they make sense with what you're using them for!
 
-Keep them as their original value for now. For example, the background color of the whole page is set to antiquewhite, so when you replace that with a variable, make sure the variable has antiquewhite as a value for now. The appearance of the page shouldn't change at this point!
+Keep them as their original value for now - just transfer that value to a CSS variable. For example, the background color of the whole page is set to antiquewhite, so when you replace that with a variable, make sure the variable has antiquewhite as a value. The appearance of the page shouldn't change at this point!
+
+You should make variables for:
 
     - body background color
     - ".plant-listing" background color 
@@ -26,8 +28,13 @@ Keep them as their original value for now. For example, the background color of 
     - ".plant-header" font size 
     - ".plant-description" font size
 
-2. 
+2. Create a new class called ".dark-mode-theme". Only within this class, reassign some of the CSS variables you made earlier like so: 
 
+    - Make the body background color variable's value black.
+    - Make the ".plant-listing" background color to rgb(0, 87, 0)
+    - Make the body text color white.
+
+3. In your JavaScript file, create a function that uses the button with id "dark-mode-button" to toggle this class on and off of the body of your webpage. Now you have a fancy dark mode button, thanks to the power of CSS variables!
 */
 
 body {
@@ -49,7 +56,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 25px;
+  padding: 35px 25px;
   margin: 25px;
   border-radius: 10px;
   width: 25vw;
