@@ -1,40 +1,48 @@
-/* 
-PLAN: 
-
-https://css-tricks.com/difference-between-types-of-css-variables/
-
-Lvl 1: 
-    - Existing CSS; convert multiple places where a property is used to variables (do several, including colors, sizes, etc.)
-    - Add new CSS variables and apply them
-Lvl 2:
-    - Reset a variable within a media query (example: https://codepen.io/chriscoyier/pen/ORdLvq?editors=0110)
-    - Dark mode/light mode toggle switch for the website!! (tie css variables to function called on button click)
-Lvl 3:
-    - Slider to make text size larger/smaller?
-    - Something using calc() or another css fn?
-*/
-
 /* Your tasks: 
 
-1. Convert the following values to CSS variables, and replace the value itself in the CSS with the variable name. Make your CSS variable names semantic so they make sense with what you're using them for!
+1. Make a set of CSS variables at the root level of your CSS. 
+Give them the following names and values: 
 
-Keep them as their original value for now - just transfer that value to a CSS variable. For example, the background color of the whole page is set to antiquewhite, so when you replace that with a variable, make sure the variable has antiquewhite as a value. The appearance of the page shouldn't change at this point!
+- primary-colour: rgb(197, 231, 147)
+- secondary-colour: antiquewhite
+- text-colour: black
+- header-size: 24px
+- main-text-size: 12px
+- border-radius: 10px
 
-You should make variables for:
+2. Now use the variables you've just made in the following places 
+in your CSS (the appearance of the website in the browser should 
+still look the same after you've swapped in the variables):
 
-    - body background color
-    - ".plant-listing" background color 
-    - body text color
-    - ".plant-header" font size 
-    - ".plant-description" font size
+- primary-colour: .plant-listing background
+- secondary-colour: body background
+- text-colour: body text
+- header-size: .plant-header
+- main-text-size: main text, button
+- border-radius: .plant-listing, .plant-pic, buttons
 
-2. Create a new class called ".dark-mode-theme". Only within this class, reassign some of the CSS variables you made earlier like so: 
+3. The main-text-size value of 12px makes the text on the page a 
+bit hard to read, don't you think? By only changing the value of the 
+main-text-size variable, change it so that all non-heading text on 
+the page is 18px instead.
 
-    - Make the body background color variable's value black.
-    - Make the ".plant-listing" background color to rgb(0, 87, 0)
-    - Make the body text color white.
+4. By this point, you might be wondering why we bothered making the 
+variables in the first place if the website still looks the same! 
+But have you noticed the button in the footer that says "Toggle 
+dark mode" yet? It's time to use the power of CSS variables to hook 
+it up.
 
-3. In your JavaScript file, create a function that uses the button with id "dark-mode-button" to toggle this class on and off of the body of your webpage. Now you have a fancy dark mode button, thanks to the power of CSS variables!
+a) Create a new class called ".dark-mode-theme". Only within this 
+class, reassign some of the CSS variables you made earlier like so: 
+
+- primary-colour: rgb(0, 87, 0)
+- secondary-colour: black
+- text-colour: white
+
+b) In your JavaScript file, create a function that uses this button 
+(with id "dark-mode-button") to toggle this class on and off of the 
+body of your webpage. Now you have a snazzy dark mode button, thanks 
+to the power of CSS variables!
 */
 
 body {
@@ -49,6 +57,7 @@ header {
 main {
   display: flex;
   justify-content: center;
+  font-size: 12px;
 }
 
 .plant-listing {
@@ -60,7 +69,7 @@ main {
   margin: 25px;
   border-radius: 10px;
   width: 25vw;
-  height: 40vh;
+  height: 45vh;
   text-align: center;
   background-color: rgb(197, 231, 147);
 }
@@ -72,14 +81,14 @@ main {
 .plant-pic {
   height: 300px;
   width: auto;
+  border-radius: 10px;
 }
 
-.plant-description {
-  font-size: 16px;
-}
-
-.plant-listing > button {
+button {
   padding: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 footer {
