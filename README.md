@@ -5,7 +5,7 @@
 ### Context:
 
 - New to css
-- Allow us some of the power that css preprocessors
+- Allow us some of the power of css preprocessors
 
 ### Syntax
 
