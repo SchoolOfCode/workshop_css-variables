@@ -58,8 +58,8 @@ to the power of CSS variables!
 
 .dark-mode-theme {
   --primary-colour: rgb(0, 87, 0);
-  --secondary-colour: black;
   --text-colour: white;
+  --secondary-colour: black;
 }
 
 body {

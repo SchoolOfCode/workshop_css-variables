@@ -129,10 +129,20 @@ describe(LEVELS.two, () => {
 });
 
 describe(LEVELS.three, () => {
-  it.todo(
-    'should have a .dark-mode-theme class where the color variables are correctly changed to the dark mode theme colors'
-  );
-  it.todo(
+  it('should have a .dark-mode-theme class where the color variables are correctly changed to the dark mode theme colors', async () => {
+    const cssAsString = await readModuleFile('./styles.css');
+    expect(cssAsString).toContain('.dark-mode-theme');
+    const darkModeClass = cssAsString
+      .split('.dark-mode-theme {')[1]
+      .split('}')[0];
+    const expected = [
+      '--primary-colour: rgb(0, 87, 0)',
+      '--secondary-colour: black',
+      '--text-colour: white',
+    ];
+    expected.forEach((cssVar) => expect(darkModeClass).toContain(cssVar));
+  });
+  it.only(
     'should have function hooked up to #dark-mode-button button that toggles the .dark-mode-theme class on and off'
   );
 });
