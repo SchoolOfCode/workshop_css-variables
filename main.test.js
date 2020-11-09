@@ -58,7 +58,7 @@ afterEach(() => {
 });
 
 describe(LEVELS.one, () => {
-  it.only('should contain the correct CSS variables and values at the root level of the CSS', async () => {
+  it('should contain the correct CSS variables and values at the root level of the CSS', async () => {
     const cssAsString = await readModuleFile('./styles.css');
     const rootCss = cssAsString.split(':root')[1].split('}')[0];
     const expected = [
@@ -66,7 +66,7 @@ describe(LEVELS.one, () => {
       '--secondary-colour: antiquewhite',
       '--text-colour: black',
       '--header-size: 24px',
-      '--main-text-size: 18px',
+      '--main-text-size',
       '--border-radius: 10px',
     ];
     expected.forEach((cssVar) => {
@@ -113,11 +113,21 @@ describe(LEVELS.one, () => {
     expect(style[`border-radius`] == `var(--border-radius)`).toBeTruthy();
   });
 });
+
 describe(LEVELS.two, () => {
-  it.todo(
-    'should have the value of main-text-size be 18px (without changing any of the places in the rest of the CSS)'
-  );
+  it(`should have the value of main-text-size be 18px (without changing any of the places where it's used to 18px in the rest of the CSS)`, async () => {
+    const { style } = Array.from(document.styleSheets[0].cssRules).find(
+      ({ selectorText }) => selectorText === 'main'
+    );
+    expect(style[`font-size`] == `18px`).not.toBeTruthy();
+    const cssAsString = await readModuleFile('./styles.css');
+    const rootCss = cssAsString.split(':root')[1].split('}')[0];
+    const expected = '--main-text-size: 18px';
+    expect(rootCss).toContain(expected);
+    expect(cssAsString).not.toContain('font-size: 18px');
+  });
 });
+
 describe(LEVELS.three, () => {
   it.todo(
     'should have a .dark-mode-theme class where the color variables are correctly changed to the dark mode theme colors'
