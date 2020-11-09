@@ -45,6 +45,8 @@ body of your webpage. Now you have a snazzy dark mode button, thanks
 to the power of CSS variables!
 */
 
+/* FIXME: fix css for smaller screens!! */
+
 :root {
   --primary-colour: rgb(197, 231, 147);
   --secondary-colour: antiquewhite;
