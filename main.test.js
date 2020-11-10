@@ -9,6 +9,7 @@ const {
 const fs = require('fs');
 const util = require('util');
 const { read } = require('fs');
+const rewire = require('rewire');
 
 expect.extend({
   toBeInTheDocument,
@@ -130,19 +131,20 @@ describe(LEVELS.two, () => {
 
 describe(LEVELS.three, () => {
   it('should have a .dark-mode-theme class where the color variables are correctly changed to the dark mode theme colors', async () => {
-    const cssAsString = await readModuleFile('./styles.css');
-    expect(cssAsString).toContain('.dark-mode-theme');
-    const darkModeClass = cssAsString
-      .split('.dark-mode-theme {')[1]
-      .split('}')[0];
-    const expected = [
-      '--primary-colour: rgb(0, 87, 0)',
-      '--secondary-colour: black',
-      '--text-colour: white',
-    ];
-    expected.forEach((cssVar) => expect(darkModeClass).toContain(cssVar));
+    const { style } = Array.from(document.styleSheets[0].cssRules).find(
+      ({ selectorText }) => selectorText === '.dark-mode-theme'
+    );
+    expect(style['--primary-colour']).toBe('rgb(0, 87, 0)');
+    expect(style['--secondary-colour']).toBe('black');
+    expect(style['--text-colour']).toBe('white');
   });
-  it.only(
-    'should have function hooked up to #dark-mode-button button that toggles the .dark-mode-theme class on and off'
-  );
+  it('should have function called toggleDarkMode in the JS that toggles the .dark-mode-theme class on and off of the body', () => {
+    //FIXME: Not sure why rewire is breaking here! What I want to do is use rewire to hand in the JSDOM version of document so that toggleDarkMode can act on it, like I've done in JS tests previously.
+    // const main = rewire('./main.js');
+    // main.__set__('document', document);
+    // main.__get__('toggleDarkMode')();
+    const actual = window.toggleDarkMode.toString();
+    expect(actual).toContain('body.classList.toggle');
+    expect(actual).toContain('dark-mode-theme');
+  });
 });

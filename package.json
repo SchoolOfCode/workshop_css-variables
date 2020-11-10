@@ -14,5 +14,8 @@
     "@testing-library/jest-dom": "^5.11.2",
     "jest": "^26.2.2",
     "jsdom": "^16.3.0"
+  },
+  "dependencies": {
+    "rewire": "^5.0.0"
   }
 }

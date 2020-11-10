@@ -39,10 +39,12 @@ class, reassign some of the CSS variables you made earlier like so:
 - secondary-colour: black
 - text-colour: white
 
-b) In your JavaScript file, create a function that uses this button 
-(with id "dark-mode-button") to toggle this class on and off of the 
-body of your webpage. Now you have a snazzy dark mode button, thanks 
-to the power of CSS variables!
+b) In your JavaScript file between the lines indicated in toggleDarkMode, 
+write a function that uses this button (with id "dark-mode-button") to toggle 
+this class on and off of the class list of the body of your webpage. Use the 
+darkModeButton and body variables that have already been selected at the top 
+of the file. Now you have a snazzy dark mode button, thanks to the power of 
+CSS variables!
 */
 
 /* FIXME: fix css for smaller screens!! */
