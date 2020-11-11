@@ -14,12 +14,13 @@ Give them the following names and values:
 in your CSS (the appearance of the website in the browser should 
 still look the same after you've swapped in the variables):
 
-- primary-colour: .plant-listing background
-- secondary-colour: body background
-- text-colour: body text
-- header-size: .plant-header 
-- main-text-size: main text, button
-- border-radius: .plant-listing, .plant-pic, button
+- Set .plant-listing background to be your primary-colour variable.
+- Set body background to be your secondary-colour variable.
+- Set body text colour to be your text-colour variable.
+- Set .plant-header text size to be your header-size variable.
+- Set main and button text size to be your main-text-size variable.
+- Set the border radius of .plant-listing, .plant-pic, and button to 
+  be your border-radius variable.
 
 3. The main-text-size value of 12px makes the text on the page a 
 bit hard to read, don't you think? By only changing the value of the 
