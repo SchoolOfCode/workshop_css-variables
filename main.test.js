@@ -70,47 +70,47 @@ describe(LEVELS.one, () => {
       ({ selectorText }) => selectorText === ':root'
     );
     variables.forEach((variable, i) => {
-      expect(style[variable] == values[i]).toBeTruthy();
+      expect(style[variable]).toBe(values[i]);
     });
   });
   it('should use the CSS variables in the correct places in the CSS - main', () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === 'main'
     );
-    expect(style[`font-size`] == `var(--main-text-size)`).toBeTruthy();
+    expect(style[`font-size`]).toBe(`var(--main-text-size)`);
   });
   it('should use the CSS variables in the correct places in the CSS - body', () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === 'body'
     );
-    expect(style[`color`] == `var(--text-colour)`).toBeTruthy();
-    expect(style[`background-color`] == `var(--secondary-colour)`).toBeTruthy();
+    expect(style[`color`]).toBe(`var(--text-colour)`);
+    expect(style[`background-color`]).toBe(`var(--secondary-colour)`);
   });
   it('should use the CSS variables in the correct places in the CSS - button', () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === 'button'
     );
-    expect(style[`font-size`] == `var(--main-text-size)`).toBeTruthy();
-    expect(style[`border-radius`] == `var(--border-radius)`).toBeTruthy();
+    expect(style[`font-size`]).toBe(`var(--main-text-size)`);
+    expect(style[`border-radius`]).toBe(`var(--border-radius)`);
   });
   it('should use the CSS variables in the correct places in the CSS - .plant-header', () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === '.plant-header'
     );
-    expect(style[`font-size`] == `var(--header-size)`).toBeTruthy();
+    expect(style[`font-size`]).toBe(`var(--header-size)`);
   });
   it('should use the CSS variables in the correct places in the CSS - .plant-listing', () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === '.plant-listing'
     );
-    expect(style[`background-color`] == `var(--primary-colour)`).toBeTruthy();
-    expect(style[`border-radius`] == `var(--border-radius)`).toBeTruthy();
+    expect(style[`background-color`]).toBe(`var(--primary-colour)`);
+    expect(style[`border-radius`]).toBe(`var(--border-radius)`);
   });
   it('should use the CSS variables in the correct places in the CSS - .plant-pic', () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === '.plant-pic'
     );
-    expect(style[`border-radius`] == `var(--border-radius)`).toBeTruthy();
+    expect(style[`border-radius`]).toBe(`var(--border-radius)`);
   });
 });
 
@@ -119,7 +119,7 @@ describe(LEVELS.two, () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
       ({ selectorText }) => selectorText === 'main'
     );
-    expect(style[`font-size`] == `18px`).not.toBeTruthy();
+    expect(style[`font-size`]).not.toBe('18px');
   });
   it(`should have the value of main-text-size be 18px`, async () => {
     const { style } = Array.from(document.styleSheets[0].cssRules).find(
