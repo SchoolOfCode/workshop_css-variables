@@ -14,7 +14,9 @@
 
 ## Your tasks to test your mastery of these:
 
-1. Make a set of CSS variables at the root level of your CSS. 
+### Task 1
+
+Make a set of CSS variables at the root level of your CSS. 
 Give them the following names and values: 
 
 - primary-colour: rgb(197, 231, 147)
@@ -24,7 +26,9 @@ Give them the following names and values:
 - main-text-size: 12px
 - border-radius: 10px
 
-2. Now use the variables you've just made in the following places 
+### Task 2
+
+Now use the variables you've just made in the following places 
 in your CSS (the appearance of the website in the browser should 
 still look the same after you've swapped in the variables):
 
@@ -35,12 +39,16 @@ still look the same after you've swapped in the variables):
 - main-text-size: main text, button
 - border-radius: .plant-listing, .plant-pic, buttons
 
-3. The main-text-size value of 12px makes the text on the page a 
+### Task 3
+
+The main-text-size value of 12px makes the text on the page a 
 bit hard to read, don't you think? By only changing the value of the 
 main-text-size variable, change it so that all non-heading text on 
 the page is 18px instead.
 
-4. By this point, you might be wondering why we bothered making the 
+### BONUS - Task 4
+
+By this point, you might be wondering why we bothered making the 
 variables in the first place if the website still looks the same! 
 But have you noticed the button in the footer that says "Toggle 
 dark mode" yet? It's time to use the power of CSS variables to hook 
