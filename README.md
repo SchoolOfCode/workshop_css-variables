@@ -1,32 +1,18 @@
-# CSS Functions
+# CSS Variables
 
-## Concepts to master:
-
-### Context:
-
-- New to css
-- Allow us some of the power of css preprocessors
-
-### Syntax
-
-- --some-variable: value;
-- some-property: var(--some-variable);
-
-## Your tasks to test your mastery of these:
-
-### Task 1
+## Task 1
 
 Make a set of CSS variables at the root level of your CSS. 
 Give them the following names and values: 
 
-- primary-colour: rgb(197, 231, 147)
+- primary-colour: green
 - secondary-colour: antiquewhite
 - text-colour: black
 - header-size: 24px
 - main-text-size: 12px
 - border-radius: 10px
 
-### Task 2
+## Task 2
 
 Now use the variables you've just made in the following places 
 in your CSS (the appearance of the website in the browser should 
@@ -39,14 +25,14 @@ still look the same after you've swapped in the variables):
 - main-text-size: main text, button
 - border-radius: .plant-listing, .plant-pic, buttons
 
-### Task 3
+## Task 3
 
 The main-text-size value of 12px makes the text on the page a 
 bit hard to read, don't you think? By only changing the value of the 
 main-text-size variable, change it so that all non-heading text on 
 the page is 18px instead.
 
-### BONUS - Task 4
+## BONUS - Task 4
 
 By this point, you might be wondering why we bothered making the 
 variables in the first place if the website still looks the same! 
