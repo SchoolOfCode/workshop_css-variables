@@ -2,10 +2,14 @@
 
 ## Task 1
 
-Make a set of CSS variables at the root level of your CSS. 
+Open index.html and see what the page looks like in the browser.
+You're now going to refactor so that the CSS colors and values are
+CSS variables instead of hard-coded.
+
+Make a set of CSS variables at the root level of your CSS file. 
 Give them the following names and values: 
 
-- primary-colour: green
+- primary-colour: rgb(197, 231, 147)
 - secondary-colour: antiquewhite
 - text-colour: black
 - header-size: 24px
@@ -16,7 +20,11 @@ Give them the following names and values:
 
 Now use the variables you've just made in the following places 
 in your CSS (the appearance of the website in the browser should 
-still look the same after you've swapped in the variables):
+still look the same after you've swapped in the variables).
+
+For example, for any element with the class .plant-listing, the value
+of their background should now use the CSS variable rather than the 
+hard-coded rgb value for the color.
 
 - primary-colour: .plant-listing background
 - secondary-colour: body background
@@ -46,6 +54,9 @@ class, reassign some of the CSS variables you made earlier like so:
 - primary-colour: rgb(0, 87, 0)
 - secondary-colour: black
 - text-colour: white
+
+Remember to Google for more information on CSS variables and how to 
+use/reassign them!
 
 b) In your JavaScript file, create a function that uses this button 
 (with id "dark-mode-button") to toggle this class on and off of the 
